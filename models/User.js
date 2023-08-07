@@ -1,17 +1,30 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const bcrypt = require('bcrypt');
+const { Model, DataTypes } = require('sequelize');
 
 const userData = require('./userData.json');
 
-const seedDatabase = async () => {
-    await sequelize.sync({ force: true });
+class User extends Model {
+    checkPassword(pass) {
+        return bcrypt.compareSync(pass, this.password)
+    }
+}
 
-    await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    process.exit(0);
-};
-
-seedDatabase();
+User.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false,
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
+    }
+)
