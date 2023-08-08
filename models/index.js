@@ -1,29 +1,31 @@
-const Post = require('./Post');
+const Blog = require('./Blog');
 const User = require('./User');
 const Comment = require('./Comment');
 
 
 //conecting tables by foreign keys
-Post.belongsTo(User, {
+Blog.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-User.hasMany(Post, {
+User.hasMany(Blog, {
     foreignKey: "user_id",
+    onDelete: 'CASCADE',
 });
 
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
 });
-Comment.belongsTo(Post, {
-    foreignKey: 'post_id',
+Comment.belongsTo(Blog, {
+    foreignKey: 'blog_id',
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
-Post.hasMany(Comment, {
-    foreignKey: 'post_id'
+Blog.hasMany(Comment, {
+    foreignKey: 'blog_id'
 });
 
-module.exports = { Post, User, Comment };
+module.exports = { Blog, User, Comment };

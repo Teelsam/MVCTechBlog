@@ -23,7 +23,7 @@ Comment.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'post',
+                model: 'blog',
                 key: 'id'
             }
         },
@@ -31,6 +31,8 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+    },
+    {
         sequelize,
         freezeTableName: true,
         underscored: true,
