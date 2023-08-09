@@ -7,16 +7,4 @@ router.use('/api', apiRoute);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
