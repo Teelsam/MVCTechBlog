@@ -5,7 +5,7 @@ const { User } = require('../models');
 const auth = require('../utils/auth');
 
 
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
             attributes: { exclude: ['password'] },

@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require('sequelize');
 
-const userData = require('./userData.json');
+
 
 class User extends Model {
     checkPassword(pass) {
