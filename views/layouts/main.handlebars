@@ -18,14 +18,12 @@
             <section>
                 <nav>
                     <a href='/'>home</a>
-                    {{#if logged_in}}
                     <a href="/profile">profile</a>
+                    {{#if logged_in}}
                     <a href="#" id="logout">Logout</a>
                     {{else}}
                     <a href="/login">login</a>
                     {{/if}}
-
-
 
                 </nav>
             </section>

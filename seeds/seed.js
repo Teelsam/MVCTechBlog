@@ -12,15 +12,15 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    process.exit(0);
+
 };
 
 const seedBlog = async () => {
     await sequelize.sync({ force: true });
     await Blog.bulkCreate(blogData);
 
-    process.exit(0);
+
 }
-seedBlog();
 seedDatabase();
+seedBlog();
 

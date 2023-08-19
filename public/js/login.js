@@ -17,7 +17,7 @@ const loginForm = async (event) => {
             console.log(response);
         } else {
             alert('Account doesnt exist. Sign up first');
-            document.location.replace('/signup');
+            
         }
     }
 }
