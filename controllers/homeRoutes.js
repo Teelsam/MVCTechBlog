@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequalize = require('../config/connection');
+// const sequalize = require('../config/connection');
 const { User } = require('../models');
 
 const auth = require('../utils/auth');
