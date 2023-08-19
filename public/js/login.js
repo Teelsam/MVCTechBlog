@@ -20,6 +20,6 @@ const loginForm = async (event) => {
             document.location.replace('/signup');
         }
     }
-    const login = document.querySelector('.login-form');
-    login.addEventListener('submit', loginForm);
 }
+const login = document.querySelector('.login-form');
+login.addEventListener('submit', loginForm);

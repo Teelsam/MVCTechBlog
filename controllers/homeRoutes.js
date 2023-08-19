@@ -6,7 +6,9 @@ const auth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-    res.render('homepage');
+    res.render('homepage', {
+        logged_in: req.session.logged_in,
+    });
 });
 
 router.get('/login', async (req, res) => {
@@ -20,3 +22,4 @@ router.get('/login', async (req, res) => {
 module.exports = router;
 
 
+// Every single handlebars page will need a Homeroute and if theres interaction itll need a js file. I still need a way to view a users collected posts. 
