@@ -5,7 +5,7 @@ const { Model, DataTypes } = require('sequelize');
 class Blog extends Model { }
 
 
-Blog.init(
+Blog.init( //creates blog table
     {
         id: {
             type: DataTypes.INTEGER,

@@ -10,7 +10,7 @@ class User extends Model {
     }
 }
 
-User.init(
+User.init(//creates user table
     {
         id: {
             type: DataTypes.INTEGER,
@@ -29,12 +29,12 @@ User.init(
     },
     {
         hooks: {
-            beforeCreate: async (createNewUser) => {
+            beforeCreate: async (createNewUser) => {//encrypts the users password
                 createNewUser.password = await bcrypt.hash(createNewUser.password, 10);
                 return createNewUser;
             },
 
-            beforeUpdate: async (updatedUser) => {
+            beforeUpdate: async (updatedUser) => {//encrypts the users password
                 updatedUser.password = await bcrypt.hash(updatedUser.password, 10);
                 return updatedUser;
             }

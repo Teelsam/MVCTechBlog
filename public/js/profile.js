@@ -1,6 +1,6 @@
 //all the buttons for create and delete
 
-const newPost = async (event) => {
+const newPost = async (event) => {//creates a new post
     event.preventDefault();
 
     const title = document.querySelector('#newPost').value;

@@ -1,6 +1,6 @@
 //login 
 
-const loginForm = async (event) => {
+const loginForm = async (event) => { //logs the user in
     event.preventDefault();
 
     const email = document.querySelector('#email-login').value;
@@ -17,7 +17,7 @@ const loginForm = async (event) => {
             console.log(response);
         } else {
             alert('Account doesnt exist. Sign up first');
-            
+
         }
     }
 }

@@ -5,5 +5,5 @@ const auth = (req, res, next) => {
         next();
     }
 };
-
+//checks to see if the client is logged in
 module.exports = auth;

@@ -3,7 +3,7 @@ const { Blog } = require('../../models/Blog');
 const auth = require('../../utils/auth');
 
 
-router.post('/', auth, async (req, res) => {
+router.post('/', auth, async (req, res) => { // creates a blog post
     try {
         const createBlog = await Blog.create({
             ...req.body,
@@ -16,7 +16,7 @@ router.post('/', auth, async (req, res) => {
     }
 
 })
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {//deletes a blog post
     try {
         const deleteBlog = await Blog.destroy({
             where: {
